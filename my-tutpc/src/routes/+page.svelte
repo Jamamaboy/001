@@ -1,5 +1,5 @@
 <script>
-	let page = 1;
+	let page = 12;
 	let point = 0;
 	let contentHeight = 0;
 	let contentWidth = 0;
@@ -7,6 +7,7 @@
 	import PStart from './nested-components/pStart.svelte';
 	import Ptbc from './nested-components/ptbc.svelte';
 	import Pn from './nested-components/pn.svelte';
+
 
 	const page_Start = [1];
 	const page_tbc = [2,3,7,8,13,14,16,17,18,20,24,26,31,34,36,37];
@@ -69,7 +70,7 @@
 
 	{#if page_n.includes(page)}
 	<!-- N [6,12]-->
-		<PStart contentHeight={contentHeight} contentWidth={contentWidth} page={page} on:nextPage={handleNextPage}/>
+		<Pn contentHeight={contentHeight} contentWidth={contentWidth} page={page} on:nextPage={handleNextPage}/>
 	{/if}
 
 	{#if page_s.includes(page)}
@@ -94,6 +95,12 @@
 
 <style>
 
+@font-face {
+	font-family: 'CloudLoop';
+	src: url('./static/font/CloudLoop-Regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
 body {
 	display: flex;
 	justify-content: center;
