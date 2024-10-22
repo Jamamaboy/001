@@ -22,10 +22,10 @@
 	<div class="space"></div>
 	{#if page == 15}
 		<div class="as">
-			<button on:click={() => handleClick(0, 1)}>แมวดูมีความแฟนตาซี<br>แตกต่างจากแมวปกติทั่วไป</button>
-			<button on:click={() => handleClick(0, 1)}>แมวดูมีกิริยาท่าทาง<br>ที่สุภาพเรียบร้อย</button>
-			<button on:click={() => handleClick(0, 1)}>รูปร่างเหมือนแมวธรรมดา<br>ทั่วไปตัวหนึ่ง</button>
-			<button on:click={() => handleClick(0, 1)}>แมวดูมุ่งมั่น ตื่นเต้นที่จะได้<br>ผจญภัยครั้งนี้ไปด้วยกัน</button>
+			<button on:click={() => handleClick(0, 1)}>แมวดูมีความแฟนตาซีแตกต่างจากแมวปกติทั่วไป</button>
+			<button on:click={() => handleClick(0, 1)}>แมวดูมีกิริยาท่าทางที่สุภาพเรียบร้อย</button>
+			<button on:click={() => handleClick(0, 1)}>รูปร่างเหมือนแมวธรรมดาทั่วไปตัวหนึ่ง</button>
+			<button on:click={() => handleClick(0, 1)}>แมวดูมุ่งมั่น ตื่นเต้นที่จะได้ผจญภัยครั้งนี้ไปด้วยกัน</button>
 		</div>
 	{/if}
 	<div class="space"></div>
@@ -43,7 +43,7 @@
 		z-index: 1;
 		justify-items: center;
 		align-items: center;
-		grid-template-rows: 55% 35% 10%;
+		grid-template-rows: 55% 45% 10%;
 		width: 100%;
 	}
 	.as {
@@ -57,7 +57,7 @@
 	}
 	.as button {
 		font-family: 'CloudLoop', sans-serif;
-		font-size: 20px;
+		font-size: 16px;
 		color: darkslategrey;
 		height: 100%;
 		width: 100%;

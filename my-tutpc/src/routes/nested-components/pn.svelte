@@ -31,10 +31,10 @@
 	{/if}
 	{#if page == 12}
 		<div class="as">
-			<button on:click={() => handleClick(0, 1)}>คุณมึนงงปนตกใจ พร้อมรีบก้าวลงจากรถ<br>เข้าไปอุ้มแมวตัวนั้น</button>
-			<button on:click={() => handleClick(0, 1)}>คุณตื่นเต้น พร้อมลุกจากรถไปอุ้มเจ้า<br>เหมียวเดินทางไปด้วยกัน</button>
-			<button on:click={() => handleClick(0, 2)}>คุณฉะชะโงกหน้าออกไปดูลาดเลา เจ้าแมว<br>เพื่อที่จะได้พิจารณามัน</button>
-			<button on:click={() => handleClick(0, 2)}>คุณคิดว่ามันแปลกเกินไปที่แมวจะอยู่ที่นี่<br>และคงไม่ดีนักที่จะไปยุ่งกับมัน</button>
+			<button on:click={() => handleClick(0, 1)}>คุณมึนงงปนตกใจ พร้อมรีบก้าวลงจากรถเข้าไปอุ้มแมวตัวนั้น</button>
+			<button on:click={() => handleClick(0, 1)}>คุณตื่นเต้น พร้อมลุกจากรถไปอุ้มเจ้าเหมียวเดินทางไปด้วยกัน</button>
+			<button on:click={() => handleClick(0, 2)}>คุณฉะชะโงกหน้าออกไปดูลาดเลา เจ้าแมว เพื่อที่จะได้พิจารณามัน</button>
+			<button on:click={() => handleClick(0, 2)}>คุณคิดว่ามันแปลกเกินไปที่แมวจะอยู่ที่นี่ และคงไม่ดีนักที่จะไปยุ่งกับมัน</button>
 		</div>
 	{/if}
 
@@ -62,7 +62,7 @@
 		display: grid;
 		align-items: center;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
-		gap: 10%;
+		gap: 5%;
 		/* background-color: aqua;	 */
 	}
 	.as button {

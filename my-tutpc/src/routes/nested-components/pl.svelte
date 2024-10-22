@@ -24,7 +24,7 @@
 	{#if page == 19}
 		<div class="as">
 			<button on:click={() => handleClick(1, 1)}>คิดติดตลกว่าจะคุยกับผียังไงดี?</button>
-			<button on:click={() => handleClick(2, 1)}>นั่งคิดสักพัก และตัดสินใจไปที่อื่นก่อน</button>
+			<button on:click={() => handleClick(2, 1)}>นั่งคิดสักพัก และ ตัดสินใจ<br>ไปที่อื่นก่อน</button>
 			<button on:click={() => handleClick(3, 1)}>ผีมีจริงที่ไหน</button>
 			<button on:click={() => handleClick(4, 1)}>อยากจะเล่นกับพวกผีจัง<br>เลย! แกล้งกลับดีไหม?</button>
 		</div>
@@ -145,12 +145,12 @@
 		display: grid;
 		align-items: center;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
-		gap: 10%;
+		gap: 5%;
 		/* background-color: aqua;	 */
 	}
 	.as button {
 		font-family: 'CloudLoop', sans-serif;
-		font-size: 20px;
+		font-size: 18px;
 		color: darkslategrey;
 		height: 100%;
 		width: 100%;

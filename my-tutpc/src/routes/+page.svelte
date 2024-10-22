@@ -12,6 +12,8 @@
 	import Ps from './nested-components/ps.svelte';
 	import Pl from './nested-components/pl.svelte';
 	import PEng from './nested-components/pENG.svelte';
+	import PP from './nested-components/pP.svelte';
+
 
 	const page_Start = [1];
 	const page_tbc = [2,3,7,8,13,14,16,17,18,20,22,24,26,31,34,36,37,38];
@@ -81,45 +83,51 @@
 
 <body>
 
-	<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
-
     <!-- Start [1]-->
 	{#if page_Start.includes(page)}
+		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 		<PStart contentHeight={contentHeight} contentWidth={contentWidth} on:nextPage={handleNextPage}/>
 
 	{/if}
 
 	<!-- TBC [2,3,7,8,13,14,16,17,18,20,24,26,31,34,36,37,38]--><!-- NextX2 [4,5]--><!-- NextX3 [9,10,11]-->
 	{#if page_tbc.includes(page) || page_nextX2.includes(page) || page_nextX3.includes(page)}
+		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 		<Ptbc contentHeight={contentHeight} contentWidth={contentWidth} on:nextPage={handleNextPage} on:previousPage={handlePreviousPage}/>
 	{/if}
 
 	{#if page_nextX2.includes(page)}
 	<!-- NextX2 [4,5]-->
-
+		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 	{/if}
 
 	{#if page_nextX3.includes(page)}
 	<!-- NextX3 [9,10,11]-->
+		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 	{/if}
 
 	<!-- N [6,12]-->
 	{#if page_n.includes(page)}
+		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 		<Pn contentHeight={contentHeight} contentWidth={contentWidth} page={page} on:nextPage={handleNextPage}/>
 	{/if}
 
 	<!-- S [15]-->
 	{#if page_s.includes(page)}
+		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 		<Ps contentHeight={contentHeight} contentWidth={contentWidth} page={page} on:nextPage={handleNextPage}/>
 	{/if}
 
 	<!-- L [19,21,23,25,26,27,28,29,30,32,33,35]-->
 	{#if page_l.includes(page)}
+		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 		<Pl contentHeight={contentHeight} contentWidth={contentWidth} page={page} on:nextPage={handleNextPage}/>
 	{/if}
 
 	{#if page_nextP.includes(page)}
 	<!-- NestP [39]-->
+		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
+		<PP contentHeight={contentHeight} contentWidth={contentWidth} on:nextPage={handleNextPage}/>
 	{/if}
 
 	{#if page_ENG.includes(page)}
@@ -135,7 +143,7 @@
 		src: url('./font/CloudLoop-Regular.otf') format('opentype');
 		font-weight: normal;
 		font-style: normal;
-	}
+}
 body {
 	display: flex;
 	justify-content: center;
