@@ -6,39 +6,35 @@
 
 	const dispatch = createEventDispatcher();
 
-	function handleClick() {
-		dispatch('nextPage');
+	/**
+     * @param {number | undefined} [additionalPoint]
+     * @param {number} [pageIncrement]
+     */
+	 function handleClick(additionalPoint, pageIncrement) {
+		dispatch('nextPage', { additionalPoint, pageIncrement });
 	}
 	console.log(page);
 
-	let widthButton = contentWidth/1.25;
+
 </script>
 
 <div class="content" style="height: {contentHeight}px; width: {contentWidth}px;">
 	<div class="space"></div>
-	{#if page == 6}
+	{#if page == 15}
 		<div class="as">
-			<button on:click={handleClick}>ไม่มีอะไรหรอก คงเป็นแค่เสียงลม<br>ที่กระทบกับหน้าต่าง</button>
-			<button on:click={handleClick}>ใจเริ่มสั่น ตัวคุณเองก็กลัว และเริ่ม<br>จินตนาการไปต่าง ๆ นา ๆ</button>
-			<button on:click={handleClick}>คุณจะลุกขึ้นมาเปิดไฟ</button>
-			<button on:click={handleClick}>เรามันแน่อยู่แล้ว ขอก้มลงไปดูใต้<br>เตียงเลยแล้วกัน !</button>
+			<button on:click={() => handleClick(0, 1)}>แมวดูมีความแฟนตาซี<br>แตกต่างจากแมวปกติทั่วไป</button>
+			<button on:click={() => handleClick(0, 1)}>แมวดูมีกิริยาท่าทาง<br>ที่สุภาพเรียบร้อย</button>
+			<button on:click={() => handleClick(0, 1)}>รูปร่างเหมือนแมวธรรมดา<br>ทั่วไปตัวหนึ่ง</button>
+			<button on:click={() => handleClick(0, 1)}>แมวดูมุ่งมั่น ตื่นเต้นที่จะได้<br>ผจญภัยครั้งนี้ไปด้วยกัน</button>
 		</div>
 	{/if}
-	{#if page == 12}
-	<div class="as">
-		<button on:click={handleClick}>คุณมึนงงปนตกใจ พร้อมรีบก้าวลงจากรถ<br>เข้าไปอุ้มแมวตัวนั้น</button>
-		<button on:click={handleClick}>คุณตื่นเต้น พร้อมลุกจากรถไปอุ้มเจ้า<br>เหมียวเดินทางไปด้วยกัน</button>
-		<button on:click={handleClick}>คุณฉะชะโงกหน้าออกไปดูลาดเลา เจ้าแมว<br>เพื่อที่จะได้พิจารณามัน</button>
-		<button on:click={handleClick}>คุณคิดว่ามันแปลกเกินไปที่แมวจะอยู่ที่นี่<br>และคงไม่ดีนักที่จะไปยุ่งกับมัน</button>
-	</div>
-{/if}
 	<div class="space"></div>
 </div>
 
 <style>
 	@font-face {
 		font-family: 'CloudLoop';
-		src: url('./static/font/CloudLoop-Regular.otf') format('opentype');
+		src: url('./font/CloudLoop-Regular.otf') format('opentype');
 		font-weight: normal;
 		font-style: normal;
 	}
@@ -47,7 +43,7 @@
 		z-index: 1;
 		justify-items: center;
 		align-items: center;
-		grid-template-rows: 45% 45% 10%;
+		grid-template-rows: 55% 35% 10%;
 		width: 100%;
 	}
 	.as {
@@ -56,8 +52,8 @@
 		display: grid;
 		align-items: center;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
-		gap: 10%;
-		/* background-color: aqua;	 */
+		gap: 5%;
+		/* background-color: aqua; */
 	}
 	.as button {
 		font-family: 'CloudLoop', sans-serif;

@@ -5,8 +5,12 @@
 
 	const dispatch = createEventDispatcher();
 
-	function handleClick() {
-		dispatch('nextPage');
+	/**
+     * @param {number | undefined} [additionalPoint]
+     * @param {number} [pageIncrement]
+     */
+	 function handleClick(additionalPoint, pageIncrement) {
+		dispatch('nextPage', { additionalPoint, pageIncrement });
 	}
 
 	function handlePreviousClick() {
@@ -19,7 +23,7 @@
 <div class="content" style="height: {contentHeight}px; width: {contentWidth}px;">
 	<button on:click={handlePreviousClick}></button>
 	<div class="space"></div>
-	<button on:click={handleClick}></button>
+	<button on:click={() => handleClick(0, 1)}></button>
 </div>
 
 <style>
