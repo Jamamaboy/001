@@ -13,7 +13,6 @@
 	 function handleClick(additionalPoint, pageIncrement) {
 		dispatch('nextPage', { additionalPoint, pageIncrement });
 	}
-	console.log(page);
 
 
 </script>
@@ -37,13 +36,14 @@
 		src: url('./font/CloudLoop-Regular.otf') format('opentype');
 		font-weight: normal;
 		font-style: normal;
+		font-display: swap;
 	}
 	.content {
 		display: grid;
 		z-index: 1;
 		justify-items: center;
 		align-items: center;
-		grid-template-rows: 55% 45% 10%;
+		grid-template-rows: 55% 35% 10%;
 		width: 100%;
 	}
 	.as {
@@ -53,7 +53,6 @@
 		align-items: center;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
 		gap: 5%;
-		/* background-color: aqua; */
 	}
 	.as button {
 		font-family: 'CloudLoop', sans-serif;

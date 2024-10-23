@@ -1,7 +1,10 @@
-<script>
+<script lang="ts">
 	import { createEventDispatcher } from "svelte";
-	export let contentHeight;
-	export let contentWidth;
+	import { supabase } from '../../lib/supabase.js';
+
+	export let contentHeight: number;
+	export let contentWidth: number;
+	export let points: number[];
 
 	const dispatch = createEventDispatcher();
 
@@ -15,12 +18,26 @@
 
 	showButtonAfterDelay();
 
+	async function saveData(points: number[]) {
+		const { data, error } = await supabase
+			.from('points_pages')
+			.insert([
+				{ points: points },
+			]);
+		if (error) {
+			console.error('Error inserting data:', error.message);
+		} else {
+			// console.log('Data inserted:', data);
+		}
+	}
+
+
 	/**
-     * @param {number | undefined} [additionalPoint]
      * @param {number} [pageIncrement]
      */
-	function handleClick(additionalPoint, pageIncrement) {
-		dispatch('nextPage', { additionalPoint, pageIncrement });
+	function handleClick(pageIncrement: number) {
+		saveData(points);
+		dispatch('nextPage', {pageIncrement});
 	}
 
 </script>
@@ -28,7 +45,7 @@
 <div class="content" style="height: {contentHeight}px; width: {contentWidth}px;">
 	<div class="space"></div>
 	{#if showButton}
-		<button on:click={() => handleClick(0, 1)}>Hope it shines bright for you! 💎✨</button>
+		<button on:click={() => handleClick(1)}>Hope it shines bright for you! 💎✨</button>
 	{/if}
 	<div class="space"></div>
 </div>
@@ -39,6 +56,7 @@
 		src: url('./font/CloudLoop-Regular.otf') format('opentype');
 		font-weight: normal;
 		font-style: normal;
+		font-display: swap;
 	}
 	.content {
 		display: grid;

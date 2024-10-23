@@ -13,7 +13,6 @@
 	function handleClick(additionalPoint, pageIncrement) {
 		dispatch('nextPage', { additionalPoint, pageIncrement });
 	}
-	console.log(page);
 
 </script>
 
@@ -130,6 +129,7 @@
 		src: url('./font/CloudLoop-Regular.otf') format('opentype');
 		font-weight: normal;
 		font-style: normal;
+		font-display: swap;
 	}
 	.content {
 		display: grid;

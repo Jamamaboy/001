@@ -14,7 +14,6 @@
 	import PEng from './nested-components/pENG.svelte';
 	import PP from './nested-components/pP.svelte';
 
-
 	const page_Start = [1];
 	const page_tbc = [2,3,7,8,13,14,16,17,18,20,22,24,26,31,34,36,37,38];
 	const page_nextX2 = [4,5];
@@ -61,9 +60,6 @@
 		history.push(page);
 		page = nextPage;
 
-		console.log("Points:", point);
-		console.log("Page:", page);
-		console.log("History:", history);
 	}
 
 	function handlePreviousPage() {
@@ -71,7 +67,6 @@
 			const previousPage = history.pop();
 			if (previousPage !== undefined) {
 				page = previousPage;
-				console.log('Page decreased to:', page);
 			}
 		} else {
 			console.log('No previous pages in history.');
@@ -83,27 +78,16 @@
 
 <body>
 
-    <!-- Start [1]-->
+	<!-- Start [1]-->
 	{#if page_Start.includes(page)}
 		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 		<PStart contentHeight={contentHeight} contentWidth={contentWidth} on:nextPage={handleNextPage}/>
-
 	{/if}
 
 	<!-- TBC [2,3,7,8,13,14,16,17,18,20,24,26,31,34,36,37,38]--><!-- NextX2 [4,5]--><!-- NextX3 [9,10,11]-->
 	{#if page_tbc.includes(page) || page_nextX2.includes(page) || page_nextX3.includes(page)}
 		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 		<Ptbc contentHeight={contentHeight} contentWidth={contentWidth} on:nextPage={handleNextPage} on:previousPage={handlePreviousPage}/>
-	{/if}
-
-	{#if page_nextX2.includes(page)}
-	<!-- NextX2 [4,5]-->
-		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
-	{/if}
-
-	{#if page_nextX3.includes(page)}
-	<!-- NextX3 [9,10,11]-->
-		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
 	{/if}
 
 	<!-- N [6,12]-->
@@ -127,11 +111,11 @@
 	{#if page_nextP.includes(page)}
 	<!-- NestP [39]-->
 		<img src="./src/public/Img/{page}.png" alt="P{page}" on:load={handleImageLoad}>
-		<PP contentHeight={contentHeight} contentWidth={contentWidth} on:nextPage={handleNextPage}/>
+		<PP contentHeight={contentHeight} contentWidth={contentWidth} points={point} on:nextPage={handleNextPage}/>
 	{/if}
 
 	{#if page_ENG.includes(page)}
-		<PEng />
+		<PEng point={point}/>
 	{/if}
 
 </body>
@@ -139,10 +123,11 @@
 <style>
 
 @font-face {
-		font-family: 'CloudLoop';
-		src: url('./font/CloudLoop-Regular.otf') format('opentype');
-		font-weight: normal;
-		font-style: normal;
+	font-family: 'CloudLoop';
+	src: url('./font/CloudLoop-Regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 body {
 	display: flex;

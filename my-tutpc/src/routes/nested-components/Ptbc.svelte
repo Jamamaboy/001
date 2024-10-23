@@ -36,7 +36,6 @@
 		grid-template-columns: 30% 40% 30%;
 	}
 	button {
-		font-size: 1px;
 		width: 100%;
 		height: 100%;
 		background: none;

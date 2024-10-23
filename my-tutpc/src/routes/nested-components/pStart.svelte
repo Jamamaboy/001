@@ -12,13 +12,10 @@
 		dispatch('nextPage', { additionalPoint, pageIncrement });
 	}
 
-
-
 </script>
 
 <div class="content" style="height: {contentHeight}px; width: {contentWidth}px;">
-	<div class="space"></div>
-	<button on:click={() => handleClick(0, 1)}>Start</button>
+	<button on:click={() => handleClick(0, 1)}></button>
 </div>
 
 <style>
@@ -27,6 +24,7 @@
 		src: url('./font/CloudLoop-Regular.otf') format('opentype');
 		font-weight: normal;
 		font-style: normal;
+		font-display: swap;
 	}
 	.content {
 		display: grid;
@@ -34,7 +32,13 @@
 		justify-items: center;
 		align-items: center;
 	}
-	.space {
+
+	button {
+		font-size: 1px;
+		width: 100%;
 		height: 100%;
+		background: none;
+		border: none;
+		object-fit: contain;
 	}
 </style>
